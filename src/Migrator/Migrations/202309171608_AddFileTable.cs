@@ -15,7 +15,6 @@ public sealed class AddFileTable : ForwardOnlyMigration
             .WithColumn("Id").AsGuid().WithDefault(SystemMethods.NewGuid).PrimaryKey()
             .WithColumn("VirtualName").AsString(75).NotNullable()
             .WithColumn("Path").AsString(300).NotNullable()
-            .WithColumn("AccessToken").AsString(50).Nullable().Indexed()
             .WithColumn("ToDelete").AsBoolean().NotNullable().Indexed();
     }
 }
