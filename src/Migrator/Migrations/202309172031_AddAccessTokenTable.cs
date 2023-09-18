@@ -9,7 +9,7 @@ public sealed class AddAccessTokenTable : ForwardOnlyMigration
     {
         Create.Table("AccessToken")
             .WithColumn("Id").AsInt32().PrimaryKey().Identity()
-            .WithColumn("Token").AsString(20).NotNullable().Indexed()
+            .WithColumn("Token").AsString(50).NotNullable().Indexed()
             .WithColumn("CloudFileId").AsGuid().NotNullable().ForeignKey("File", "Id");
     }
 }

@@ -63,7 +63,7 @@ public sealed class FilesController : ControllerBase
 
         var accessToken = new AccessToken
         {
-            Token = RandomHelper.GenerateRandomString(20),
+            Token = RandomHelper.GenerateRandomString(50),
             CloudFile = file,
             CloudFileId = file.Id
         };
