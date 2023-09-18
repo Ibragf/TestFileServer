@@ -1,0 +1,36 @@
+version: '3.9'
+services:
+  postgres:
+    image: postgres:latest
+    environment:
+     - POSTGRES_PASSWORD=postgrespw
+     - POSTGRES_USER=postgres
+     - POSTGRES_DB=test
+    ports:
+     - "54320:5432"
+    networks:
+     - development
+     
+  migrator:
+    build: ./src/Migrator
+    depends_on:
+     - postgres
+    ports:
+     - "7070:80"
+    networks:
+     - development
+   
+  task_service:
+    build: ./src/FileService
+    depends_on:
+     - postgres
+    ports:
+     - "7071:80"
+    networks:
+     - development
+     
+networks:
+ development:
+  driver: bridge
+    
+    

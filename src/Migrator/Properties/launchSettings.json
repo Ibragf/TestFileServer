@@ -1,0 +1,14 @@
+{
+  "profiles": {
+    "Migrator": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7116"
+    },
+    "Docker": {
+      "commandName": "Docker",
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
+      "httpPort": 30833,
+      "useSSL": false
+    }
+  }
+}
